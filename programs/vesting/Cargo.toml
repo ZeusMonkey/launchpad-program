@@ -1,0 +1,24 @@
+[package]
+name = "vesting"
+version = "0.1.0"
+description = "Token vesting program"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "vesting"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = ["local-testing"]
+local-testing = []
+
+[dependencies]
+anchor-lang = "0.22.0"
+anchor-spl = "0.22.0"
+solana-program = "1.8.5"
+spl-token = { version = "3.2.0", features = ["no-entrypoint"] }
+token-sale = { path="../token-sale", features = ["no-entrypoint"] }

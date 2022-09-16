@@ -1,0 +1,20 @@
+[package]
+name = "whitelist-nft"
+version = "0.1.0"
+description = "Whitelist NFT program"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "whitelist_nft"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = ["local-testing"]
+local-testing = []
+
+[dependencies]
+anchor-lang = "0.22.0"
